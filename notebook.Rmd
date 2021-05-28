@@ -38,7 +38,7 @@ work with CSV and Excel files in R.)
     -   [Through The TM Package](#data3)
 
 
-## Checking Your Data {#Your}
+## Checking Your Data 
 
 To start, you first need to have data. The data can be saved in a file
 onto your computer in an Excel, SPSS, or some other file type. When your
@@ -77,7 +77,7 @@ import the data correctly into R:
 
 
 
-## Preparing Your R Workspace {#Preparing}
+## Preparing Your R Workspace 
 
 
 Make sure to go into RStudio and see what needs to be done before you
@@ -112,14 +112,14 @@ set:
 setwd("<location of your dataset>")
 ```
 
-## Read CSV, TXT, HTML, and Other Common Files into R {#Getting}
+## Read CSV, TXT, HTML, and Other Common Files into R 
 
 You will notice that the following basic R functions focus on getting
 spreadsheets into R, rather than Excel or other type of files. If you
 are more interested in the latter, scroll a bit further to discover the
 ways of importing other files into R.
 
-### Read TXT files with read.table() {#txt}
+### Read TXT files with read.table() 
 
 If you have a `.txt` or a tab-delimited text file, you can easily import
 it with the basic R function `read.table()`. In other words, the
@@ -172,7 +172,7 @@ differ from it in three aspects only:
     have unequal length, blank fields will be added implicitly.
 
 
-### Read CSV Files into R {#csv}
+### Read CSV Files into R 
 
 If your separates the values with a `,` or `;`, you usually are working
 with a `.csv` file. Its contents will look similar to this:
@@ -238,7 +238,7 @@ Also note that if you have initialized other cells than the ones that
 your data contains, you’ll see some rows or columns with `NA` values
 appear. The best case is then to remove those rows and columns!
 
-### read.delim() for Delimited Files {#files}
+### read.delim() for Delimited Files 
 
 In case you have a file with a separator character that is different
 from a tab, a comma or a semicolon, you can always use the
@@ -265,7 +265,7 @@ df <- read.delim2("https://s3.amazonaws.com/assets.datacamp.com/blog_assets/test
 df
 ```
 
-### XLConnect Package for Reading Excel Files {#excel}
+### XLConnect Package for Reading Excel Files
 
 To load Excel files into R, you first need to do some further prepping
 of your workspace in the sense that you need to install packages.
@@ -348,7 +348,7 @@ functions. You can also add a `sheet` argument, just like with the
 XLConnect package, and many more arguments on which you can read up
 [here](https://github.com/hadley/readxl) or in this [blog post](http://blog.rstudio.org/2015/04/15/readxl-0-1-0/).
 
-### Read JSON Files Into R {#javascript}
+### Read JSON Files Into R 
 
 To get [JSON](http://json.org/) files into R, you first need to install
 or load the [rjson](http://www.rdocumentation.org/packages/rjson)
@@ -382,7 +382,7 @@ JsonData <- fromJSON(file = "<URL to your JSON file>")
 ```
 
 
-### Read XML Data Into R {#xml}
+### Read XML Data Into R 
 
 If you want to get XML data into R, one of the easiest ways is through
 the usage of the [XML](http://www.rdocumentation.org/packages/XML)
@@ -457,7 +457,7 @@ data_df <- xmlToDataFrame(url)
 ```
 
 
-### Importing Data From HTML Tables Into R {#data}
+### Importing Data From HTML Tables Into R 
 
 From HTML tables into R is pretty straightforward:
 
@@ -522,7 +522,7 @@ data <- readHTMLTable(rawToChar(urldata$content),
 
 
 
-## Read SAS, SPSS, and Other Datasets into R {#Getting_Statistical}
+## Read SAS, SPSS, and Other Datasets into R 
 
 As you already know, R is a programming language and software
 environment for statistical computing. That’s why it probably won’t come
@@ -534,7 +534,7 @@ statistical software programs: you’ll see which packages that you need
 to install to read your data files into R, just like you have done with
 data that was stored in Excel or JSON files.
 
-### Read SPSS Files into R {#spss}
+### Read SPSS Files into R 
 
 If you’re a user of SPSS software and you are looking to import your
 SPSS files into R, firstly install the
@@ -575,7 +575,7 @@ number of different values. As such, they are often called “categorical
 variables”. The different values of factors can be labeled and are
 therefore often called “value labels”
 
-### Read Stata Files into R {#stata}
+### Read Stata Files into R 
 
 To import Stata files, you keep on using the `foreign` package. Use the
 `read.dta()` function to get your data into R:
@@ -589,7 +589,7 @@ mydata <- read.dta("<Path to file>")
 ```
 
 
-### Read Systat Files into R {#systat}
+### Read Systat Files into R 
 
 If you want to get Systat files into R, you also want to use the
 [`foreign`](https://www.rdocumentation.org/packages/foreign/versions/0.8-67)
@@ -605,7 +605,7 @@ mydata <- read.systat("<Path to file>")
 
 
 
-### Read SAS Files into R {#sas}
+### Read SAS Files into R 
 
 For users that also want to import SAS files into R, it’s quite simple!
 For starters, install the `sas7bdat` package. Load it, and then invoke
@@ -632,7 +632,7 @@ XPORT Format Library with the `read.ssd()` and `read.xport()` functions,
 respectively. For more information, click
 [here](https://www.rdocumentation.org/packages/foreign/versions/0.8-67).
 
-### Read Minitab Files into R {#minitab}
+### Read Minitab Files into R 
 
 Is your software of choice for statistical purposes Minitab? Look no
 further if you want to use Minitab data in R!
@@ -653,7 +653,7 @@ myMTPData <- read.mtp("example2.mtp")
 
 
 
-### Read RDA or RData Files into R {#rda}
+### Read RDA or RData Files into R
 
 If your data file is one that you have saved in R as an `.rdata` file,
 you can read it in as follows:
@@ -663,14 +663,14 @@ load("<FileName>.RDA")
 ```
 
 
-## Read Databases and Other Sources Into R {#Getting_Other}
+## Read Databases and Other Sources Into R 
 
 
 Since this tutorial focuses on importing data from different types of
 sources, it is only right to also briefly mention that you can import
 data into R that comes from databases, webscraping, etc.
 
-### Read Relational and Non-Relational Databases into R {#data1}
+### Read Relational and Non-Relational Databases into R 
 
 #### Importing Data From Relational Databases
 
@@ -697,7 +697,7 @@ R, like data from **MongoDB**, you can read this
 from “Yet Another Blog in Statistical Computing” for an overview on how
 to load data from MongoDB into R.
 
-### Importing Data Through Webscraping {#data2}
+### Importing Data Through Webscraping 
 
 You can read up on how to scrape JavaScript data with R with the use of
 PhantomJS and the `rvest` package in this [DataCamp tutorial](https://www.datacamp.com/community/tutorials/scraping-javascript-generated-data-with-r/).
@@ -707,7 +707,7 @@ If you want to use APIs to import your data, you can easily find one
 **Tip**: you can check out [this set](http://quantifyingmemory.blogspot.co.uk/2014/02/web-scraping-basics.html)
 of amazing tutorials which deal with the basics of webscraping.
 
-### Importing Data Through The TM Package {#data3}
+### Importing Data Through The TM Package 
 
 For those of you who are interested in importing textual data to start
 mining texts, you can read in the text file in the following way after
